@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
+
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -34,24 +35,37 @@
             const data = await response.json();
             const {
                 latitude,
-                longitude
+                longitude,
             } = data;
             var marker = L.marker([latitude, longitude]).addTo(map);
-            console.log(latitude);
-            console.log(longitude);
+            // console.log(latitude);
+            // console.log(longitude);
+            
         }
-
         getLocation();
-        const map = L.map('map').setView([20, 10], 3);
+
+        var Stadia_AlidadeSmoothDark = L.tileLayer(
+            'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+                maxZoom: 30,
+                attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+            });
+        const map = L.map('map').setView([20, 0], 3);
+        
+
         const attribution = '&copy <a href="https://www.openstreetmap.org/copyright">Open Street Maps</a> contributors';
-        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const tileUrl = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
         const tiles = L.tileLayer(tileUrl, {
             attribution
         });
         tiles.addTo(map);
+
+        L.control.scale().addTo(map);
+
+
     </script>
 
     <!-- Now you need to figure out how to save Longitude and Latitude to a variable that you can use in the marker -->
+    <script src="js/leaflet-providers.js"></script>
 </body>
 
 </html>
