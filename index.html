@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <h1>This is where my map will go</h1>
+    <h1></h1>
     <div id="map"></div>
 
     <!-- Here is your IP Address Location Information -->
@@ -36,10 +36,14 @@
             const {
                 latitude,
                 longitude,
+                city,
+                ip_address
             } = data;
             var marker = L.marker([latitude, longitude]).addTo(map);
-            // console.log(latitude);
-            // console.log(longitude);
+            console.log('Your latitude is ' + latitude);
+            console.log('Your longitude is ' + longitude);
+            console.log('Your city is ' + city);
+            console.log('Your IP Address is ' + ip_address);
             
         }
         getLocation();
