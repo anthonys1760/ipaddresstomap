@@ -44,7 +44,6 @@
             console.log('Your longitude is ' + longitude);
             console.log('Your city is ' + city);
             console.log('Your IP Address is ' + ip_address);
-            
         }
         getLocation();
 
@@ -54,7 +53,7 @@
                 attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
             });
         const map = L.map('map').setView([20, 0], 3);
-        
+
 
         const attribution = '&copy <a href="https://www.openstreetmap.org/copyright">Open Street Maps</a> contributors';
         const tileUrl = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
@@ -64,8 +63,6 @@
         tiles.addTo(map);
 
         L.control.scale().addTo(map);
-
-
     </script>
 
     <!-- Now you need to figure out how to save Longitude and Latitude to a variable that you can use in the marker -->
