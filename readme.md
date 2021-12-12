@@ -1,5 +1,5 @@
 # IP Address to Geolocation
-![title-pic](loruki.png)
+![title-pic](screenshot.png)
 
 Project that collects IP Address and routes to General Geolocation area on demand. If using a VPN service location is spoofed and placed in another location.
 
