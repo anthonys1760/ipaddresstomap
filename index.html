@@ -44,10 +44,13 @@
             console.log('Your longitude is ' + longitude);
             console.log('Your city is ' + city);
             console.log('Your IP Address is ' + ip_address);
-            map.flyTo([latitude, longitude], 15, {
-                animate: true,
-                duration: 5 // in seconds
-            });
+            setTimeout(function () {
+                map.flyTo([latitude, longitude], 15, {
+                    animate: true,
+                    duration: 5 // in seconds
+                });
+            }, 4000); //wait 2 seconds
+
         }
         getLocation();
 
@@ -58,9 +61,6 @@
             });
 
         const map = L.map('map').setView([20, 0], 3);
-
-
-
         const attribution = '&copy <a href="https://www.openstreetmap.org/copyright">Open Street Maps</a> contributors';
         const tileUrl = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
         const tiles = L.tileLayer(tileUrl, {
